@@ -4,7 +4,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "centos/7"
 
-  config.vm.provision "ansible" do |ansible|
+  config.vm.provision "ansible_local" do |ansible|
     ansible.verbose = "vvv"
     ansible.playbook = "provisioning/playbook.yml"
     ansible.sudo = "true"
@@ -28,6 +28,11 @@ Vagrant.configure(2) do |config|
   config.vm.define "client" do |client|
     client.vm.network "private_network", ip: "192.168.50.15", virtualbox__intnet: "dns"
     client.vm.hostname = "client"
+  end
+
+  config.vm.define "client2" do |client|
+    client.vm.network "private_network", ip: "192.168.50.16", virtualbox__intnet: "dns"
+    client.vm.hostname = "client2"
   end
 
 end

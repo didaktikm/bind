@@ -1,6 +1,6 @@
 $TTL 3600
-$ORIGIN dns.lab.
-@               IN      SOA     ns01.dns.lab. root.dns.lab. (
+$ORIGIN dnsnew.lab.
+@               IN      SOA     ns01.dnsnew.lab. root.dnsnew.lab. (
                             2019081601 ; serial
                             3600       ; refresh (1 hour)
                             600        ; retry (10 minutes)
@@ -8,14 +8,12 @@ $ORIGIN dns.lab.
                             600        ; minimum (10 minutes)
                         )
 
-                IN      NS      ns01.dns.lab.
-                IN      NS      ns02.dns.lab.
+                IN      NS      ns01.dnsnew.lab.
+                IN      NS      ns02.dnsnew.lab.
 
 ; DNS Servers
 ns01            IN      A       192.168.50.10
 ns02            IN      A       192.168.50.11
 ; Clients
-client         IN      A       192.168.50.15
-client2        IN      A       192.168.50.16
-web1           IN      CNAME   client
-web2           IN      CNAME   client2
+www             IN      A       192.168.50.15
+                IN      A       192.168.50.16
