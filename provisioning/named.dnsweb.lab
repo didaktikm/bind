@@ -1,6 +1,6 @@
 $TTL 3600
 $ORIGIN dnsweb.lab.
-@               IN      SOA     ns01.dns.lab. root.dnsweb.lab. (
+@               IN      SOA     ns01.dnsweb.lab. root.dnsweb.lab. (
                             2019081601 ; serial
                             3600       ; refresh (1 hour)
                             600        ; retry (10 minutes)

@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "centos/7"
 
   config.vm.provision "ansible_local" do |ansible|
-    ansible.verbose = "vvv"
+    ansible.verbose = ""
     ansible.playbook = "provisioning/playbook.yml"
     ansible.sudo = "true"
   end
