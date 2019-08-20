@@ -47,10 +47,10 @@
   - name: install policycoreutils-python
     yum: name=policycoreutils-python state=latest
 
-  - name: Create and install selinux module
-    shell: 
-      audit2allow -a -M named 
-      semodule -i named.pp
+  - name: Change the named_t domain to permissive
+    selinux_permissive:
+      name: named_t
+      permissive: true
 
   - name: restart named
     service: name=named state=restarted
